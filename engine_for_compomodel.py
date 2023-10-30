@@ -19,6 +19,7 @@ def composition_train_class_batch(model, samples, target_noun, target_verb, crit
     return total_loss, loss_noun, loss_verb, outputs_noun, outputs_verb
 
 
+
 def get_loss_scale_for_deepspeed(model):
     optimizer = model.optimizer
     return optimizer.loss_scale if hasattr(optimizer, "loss_scale") else optimizer.cur_scale
