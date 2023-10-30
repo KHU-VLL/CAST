@@ -2,6 +2,9 @@
 
 ![CAST Framework](figs/CAST.jpg)
 
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)<br>
+![GitHub last commit](https://img.shields.io/github/last-commit/khuvll/CAST)<br>
+![GitHub issues](https://img.shields.io/github/issues-raw/khuvll/CAST)
 
 
 ## Installation
@@ -22,6 +25,8 @@ cd DeepSpeed
 DS_BUILD_OPS=1 pip install .
 pip install TensorboardX decord einops scipy pandas requests
 ```
+
+* We conduct all the experiments with 16 NVIDIA GeForce RTX 3090 GPUs.
 
 
 ## Data Preparation
