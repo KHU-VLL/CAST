@@ -3,9 +3,11 @@
 ![CAST Framework](figs/CAST.jpg)
 
 
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)<br>
 ![GitHub last commit](https://img.shields.io/github/last-commit/khuvll/CAST)<br>
+![Website Status](https://img.shields.io/website?url=https://jong980812.github.io/CAST.github.io/)<br>
 ![GitHub issues](https://img.shields.io/github/issues-raw/khuvll/CAST)
+![GitHub closed issue](https://img.shields.io/github/issues-closed/khuvll/CAST)<br>
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)<br>
 
 
 ## Installation
@@ -154,18 +156,18 @@ python ./run_bidirection.py --fine_tune {YOUR_FINETUNED_WEIGHT} --eval
 
 |  Method  | Spatial Expert | Temporal expert | Epoch | \#Frames x Clips x Crops |                          Fine-tune                           | Top-1 |
 | :------: | :------: | :------: | :---: | :-----: | :----------------------------------------------------------: | :---: |
-| CAST |  [CLIP-B](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt)   | [VideoMAE-B (pre-trained on EK100)](https://drive.google.com/file/d/1DaxOctpEkmKTi873J1jzzz_Sl-0wRai7/view?usp=sharing) |  50  | 16x2x3  | [log](https://drive.google.com/file/d/1yry2Nd5BEaX3kZjNYDghGHubpei-by_9/view?usp=sharing)/[checkpoint](https://drive.google.com/file/d/1pW5tMWG2N5zqQOOPcrawwQpIAhPFMoVx/view?usp=sharing)<br />| 49.3  |
+| CAST |  [CLIP-B/16](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt)   | [VideoMAE-B/16 (pre-trained on EK100)](https://drive.google.com/file/d/1DaxOctpEkmKTi873J1jzzz_Sl-0wRai7/view?usp=sharing) |  50  | 16x2x3  | [log](https://drive.google.com/file/d/1yry2Nd5BEaX3kZjNYDghGHubpei-by_9/view?usp=sharing)/[checkpoint](https://drive.google.com/file/d/1pW5tMWG2N5zqQOOPcrawwQpIAhPFMoVx/view?usp=sharing)<br />| 49.3  |
 ### Something-Something V2
 
 |  Method  | Spatial Expert | Temporal expert | Epoch | \#Frames x Clips x Crops |                          Fine-tune                           | Top-1 |
 | :------: | :------: | :------: | :---: | :-----: | :----------------------------------------------------------: | :---: |
-| CAST |  [CLIP-B](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt)   | [VideoMAE-B (pre-trained on SSV2)](https://drive.google.com/file/d/1dt_59tBIyzdZd5Ecr22lTtzs_64MOZkT/view?usp=sharing) |  50  | 16x2x3  | [log](https://drive.google.com/file/d/1wOjcXSen9B9R2CIQ8ge7HrRufr_MmMcN/view?usp=sharing)/[checkpoint](https://drive.google.com/file/d/1RrAVF4tlpZCPYNY49M0pKQfopP6p6Vir/view?usp=sharing)<br /> | 71.6  |
+| CAST |  [CLIP-B/16](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt)   | [VideoMAE-B/16 (pre-trained on SSV2)](https://drive.google.com/file/d/1dt_59tBIyzdZd5Ecr22lTtzs_64MOZkT/view?usp=sharing) |  50  | 16x2x3  | [log](https://drive.google.com/file/d/1wOjcXSen9B9R2CIQ8ge7HrRufr_MmMcN/view?usp=sharing)/[checkpoint](https://drive.google.com/file/d/1RrAVF4tlpZCPYNY49M0pKQfopP6p6Vir/view?usp=sharing)<br /> | 71.6  |
 
 ### Kinetics-400
 
 |  Method  | Spatial Expert | Temporal expert | Epoch | \#Frames x Clips x Crops |                          Fine-tune                           | Top-1 |
 | :------: | :------: | :------: | :---: | :-----: | :----------------------------------------------------------: | :---: |
-| CAST |  [CLIP-B](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt)   | [VideoMAE-B (pre-trained on K400)](https://drive.google.com/file/d/1MzwteHH-1yuMnFb8vRBQDvngV1Zl-d3z/view?usp=sharing) |  70  | 16x5x3  | [log](https://drive.google.com/file/d/1Npw-GblhSGWVx0nU06ztjDLMFcazeCx6/view?usp=sharing)/[checkpoint](https://drive.google.com/file/d/16ndsBVNjRuJMRM40P0-a3Q1JVA8tNLK7/view?usp=sharing)<br />| 85.3  |
+| CAST |  [CLIP-B/16](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt)   | [VideoMAE-B/16 (pre-trained on K400)](https://drive.google.com/file/d/1MzwteHH-1yuMnFb8vRBQDvngV1Zl-d3z/view?usp=sharing) |  70  | 16x5x3  | [log](https://drive.google.com/file/d/1Npw-GblhSGWVx0nU06ztjDLMFcazeCx6/view?usp=sharing)/[checkpoint](https://drive.google.com/file/d/16ndsBVNjRuJMRM40P0-a3Q1JVA8tNLK7/view?usp=sharing)<br />| 85.3  |
 
 
 ## Acknowledgements
