@@ -12,25 +12,29 @@
 
 ## Installation
 
+* We conduct all the experiments with 16 NVIDIA GeForce RTX 3090 GPUs.
 First, install PyTorch 1.10.0+ and torchvision 0.11.0.
 
 ```
 conda create -n vmae_1.10  python=3.8 ipykernel -y
 conda activate vmae_1.10
-conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=11.3 -c pytorch -c conda-forge
+conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 -c pytorch
 ```
 Then, install timm, triton, DeepSpeed, and others.
 ```
-pip install timm==0.4.12
 pip install triton==1.0.0
 git clone https://github.com/microsoft/DeepSpeed
 cd DeepSpeed
-DS_BUILD_OPS=1 pip install .
+git checkout 3a3dfe66bb
+DS_BUILD_OPS=1 pip install . --global-option="build_ext"
 pip install TensorboardX decord einops scipy pandas requests
+ds_report
 ```
 
-* We conduct all the experiments with 16 NVIDIA GeForce RTX 3090 GPUs.
+If you have successfully installed Deepspeed, after running the 'ds_report' command, you can see the following results.
+For other Deepspeed-related issues, please refer to the [DeepSpeed GitHub page](https://github.com/microsoft/DeepSpeed).
 
+<img src="/data/jong980812/project/CAST/figs/ds_report.PNG" width="500">
 
 ## Data Preparation
 
