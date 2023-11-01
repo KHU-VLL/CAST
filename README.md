@@ -34,7 +34,7 @@ ds_report
 If you have successfully installed Deepspeed, after running the 'ds_report' command, you can see the following results.
 For other Deepspeed-related issues, please refer to the [DeepSpeed GitHub page](https://github.com/microsoft/DeepSpeed).
 
-<img src="/data/jong980812/project/CAST/figs/ds_report.JPG" width="500">
+![DS_REPORT](figs/ds_report.JPG)
 
 ## Data Preparation
 
