@@ -408,6 +408,7 @@ class STCrossTransformer(nn.Module):
                  pretrained_cfg = None):
         super().__init__()
         self.num_classes = num_classes
+        
         self.num_frames = all_frames
         self.embed_dim = embed_dim  # num_features for consistency with other models
         self.tubelet_size = tubelet_size
