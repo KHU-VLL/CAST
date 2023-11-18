@@ -1,3 +1,6 @@
+# :mega:  Notice 
+The paper  will be posted on ArXiv at 2:00 PM EST on November 23rd
+
 # CAST: Cross-Attention in Space and Time for Video Action Recognition [[NeurIPS 2023](https://neurips.cc/virtual/2023/poster/70748)]
 
 ![CAST Framework](figs/CAST.jpg)
