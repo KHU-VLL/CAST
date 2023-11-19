@@ -13,9 +13,9 @@ The paper  will be posted on ArXiv at 2:00 PM EST on November 23rd
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)<br>
 
 
-## Installation
+# :package: Installation
 
-* We conduct all the experiments with 16 NVIDIA GeForce RTX 3090 GPUs.
+We conduct all the experiments with 16 NVIDIA GeForce RTX 3090 GPUs.
 First, install PyTorch 1.10.0+ and torchvision 0.11.0.
 
 ```
@@ -39,26 +39,31 @@ For other Deepspeed-related issues, please refer to the [DeepSpeed GitHub page](
 
 ![DS_REPORT](figs/ds_report.JPG)
 
-## Data Preparation
+# :file_folder: Data Preparation
 
- We report experimental results on three standard datasets.([EPIC-KITCHENS-100](https://epic-kitchens.github.io/2023), [Something-Something-V2](https://developer.qualcomm.com/software/ai-datasets/something-something), [Kinetics400](https://deepmind.com/research/open-source/kinetics))
+ * We report experimental results on three standard datasets.([EPIC-KITCHENS-100](https://epic-kitchens.github.io/2023), [Something-Something-V2](https://developer.qualcomm.com/software/ai-datasets/something-something), [Kinetics400](https://deepmind.com/research/open-source/kinetics))
+ * We provide the annotation files that we have used :arrow_right: [annotation](./annotations/)
 
+### EPIC-KITCHENS-100
 - The pre-processing of **EPIC-KITCHENS-100** can be summarized into 3 steps:
 
   1. Download the dataset from [official website](https://github.com/epic-kitchens/epic-kitchens-download-scripts).
 
   2.  Preprocess the dataset by resizing the short edge of video to **256px**. You can refer to [MMAction2 Data Benchmark](https://github.com/open-mmlab/mmaction2).
 
-  3. Generate annotations needed for dataloader ("<video_id>,<verb_class>,<noun_class>" in annotations). The annotation usually includes `train.csv`, `val.csv`. The format of `*.csv` file is like:
+  3. Generate annotations needed for dataloader ("<video_id>,<verb_class>,<noun_class>" in annotations). The annotation usually includes `train.csv`, `val.csv`. The format of `*.csv` file is like:<br>
+ 
 
      ```
-     video_1.mp4,verb_1,noun_1
-     video_2.mp4,verb_2,noun_2
-     video_3.mp4,verb_3,noun_3
+     video_1,verb_1,noun_1
+     video_2,verb_2,noun_2
+     video_3,verb_3,noun_3
      ...
-     video_N.mp4,verb_N,noun_N
+     video_N,verb_N,noun_N
      ```
+  4. All video files are located inside the DATA_PATH.
 
+### Something-Something-V2
 - The pre-processing of **Something-Something-V2** can be summarized into 3 steps:
 
   1. Download the dataset from [official website](https://developer.qualcomm.com/software/ai-datasets/something-something).
@@ -74,7 +79,8 @@ For other Deepspeed-related issues, please refer to the [DeepSpeed GitHub page](
      ...
      video_N.mp4  label_N
      ```
-
+  4. All video files are located inside the DATA_PATH.
+### Kinetics-400
 - The pre-processing of **Kinetics400** can be summarized into 3 steps:
 
   1. Download the dataset from [official website](https://deepmind.com/research/open-source/kinetics) or [OpenDataLab](https://opendatalab.com/OpenMMLab/Kinetics-400).
@@ -91,12 +97,12 @@ For other Deepspeed-related issues, please refer to the [DeepSpeed GitHub page](
      video_N.mp4  label_N
      ```
      <br>
-
-## Expert model preparation
+ 4. All video files should be splited into **DATA_PATH/train** and **DATA_PATH/val**.
+# Expert model preparation
 We use the pre-trained weights of spatial and temporal experts. The pretrained weight of the spatial expert (CLIP) uses the [official weight](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt). The pre-trained weight of the temporal expert (VideoMAE) uses the pre-trained weights from the three datasets EK100, K400, and SSV2. Of these, [K400](https://drive.google.com/file/d/1MzwteHH-1yuMnFb8vRBQDvngV1Zl-d3z/view?usp=sharing) and [SSV2](https://drive.google.com/file/d/1dt_59tBIyzdZd5Ecr22lTtzs_64MOZkT/view?usp=sharing) use the [official weights](https://github.com/potatowarriors/VideoMAE/blob/main/MODEL_ZOO.md), and [EK100](https://drive.google.com/file/d/16zDs_9ycAoz8AoEecrQXsC5vLZsaQoTw/view?usp=sharing) uses the weights we pre-trained ourselves. Put each downloaded expert weight into the VMAE_PATH and CLIP_PATH of the fine-tune script.
 
 
-## Fine-tuning CAST
+# Fine-tuning CAST
 
 We provide the **off-the-shelf** scripts in the [scripts folder](scripts).
 
@@ -148,7 +154,7 @@ OMP_NUM_THREADS=1 python -m torch.distributed.launch \
     --enable_deepspeed \
     --warmup_epochs 5 \
   ```
-## Evaluation
+# Evaluation
 Evaluation commands for the EK100.
 ```
 python ./run_bidirection_compo.py --fine_tune {YOUR_FINETUNED_WEIGHT} --composition --eval
@@ -157,7 +163,7 @@ Evaluation commands for the SSV2, K400.
 ```
 python ./run_bidirection.py --fine_tune {YOUR_FINETUNED_WEIGHT} --eval
 ```
-## Model Zoo
+# Model Zoo
 
 ### EPIC-KITCHENS-100
 

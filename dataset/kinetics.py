@@ -85,7 +85,7 @@ class VideoClsDataset(Dataset):
             scale_t = 1
 
             sample = self.dataset_samples[index]
-            sample = self.data_path + '/videos_train/' + sample
+            sample = os.path.join(self.data_path,'train',sample)# self.data_path + '/videos_train/' + sample
             buffer = self.loadvideo_decord(sample, sample_rate_scale=scale_t) # T H W C
             if len(buffer) == 0:
                 while len(buffer) == 0:
@@ -112,7 +112,7 @@ class VideoClsDataset(Dataset):
 
         elif self.mode == 'validation':
             sample = self.dataset_samples[index]
-            sample = self.data_path + '/videos_val/' + sample
+            sample = os.path.join(self.data_path,'val',sample)# self.data_path + '/videos_train/' + sample
             buffer = self.loadvideo_decord(sample)
             if len(buffer) == 0:
                 while len(buffer) == 0:
@@ -125,7 +125,7 @@ class VideoClsDataset(Dataset):
 
         elif self.mode == 'test':
             sample = self.test_dataset[index]
-            sample = self.data_path + '/videos_val/' + sample
+            sample = os.path.join(self.data_path,'val',sample)# self.data_path + '/videos_train/' + sample
             chunk_nb, split_nb = self.test_seg[index]
             buffer = self.loadvideo_decord(sample)
 
