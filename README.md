@@ -1,7 +1,7 @@
 # :mega:  Notice 
 The paper  will be posted on ArXiv at 2:00 PM EST on November 23rd
 
-# CAST: Cross-Attention in Space and Time for Video Action Recognition [[NeurIPS 2023](https://neurips.cc/virtual/2023/poster/70748)]
+# CAST: Cross-Attention in Space and Time for Video Action Recognition [[NeurIPS 2023](https://neurips.cc/virtual/2023/poster/70748)][[Project Page](https://jong980812.github.io/CAST.github.io)]
 
 ![CAST Framework](figs/CAST.jpg)
 
@@ -42,7 +42,7 @@ For other Deepspeed-related issues, please refer to the [DeepSpeed GitHub page](
 # :file_folder: Data Preparation
 
  * We report experimental results on three standard datasets.([EPIC-KITCHENS-100](https://epic-kitchens.github.io/2023), [Something-Something-V2](https://developer.qualcomm.com/software/ai-datasets/something-something), [Kinetics400](https://deepmind.com/research/open-source/kinetics))
- * We provide the annotation files that we have used :arrow_right: [annotation](./annotations/)
+ * We provide sample annotation files -> [annotations](./annotations/).
 
 ### EPIC-KITCHENS-100
 - The pre-processing of **EPIC-KITCHENS-100** can be summarized into 3 steps:
