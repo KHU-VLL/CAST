@@ -13,7 +13,7 @@ The paper  will be posted on ArXiv at 2:00 PM EST on November 23rd
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)<br>
 
 
-# :package: Installation
+# :wrench: Installation
 
 We conduct all the experiments with 16 NVIDIA GeForce RTX 3090 GPUs.
 First, install PyTorch 1.10.0+ and torchvision 0.11.0.
