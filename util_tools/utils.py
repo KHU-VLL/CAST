@@ -393,7 +393,7 @@ def load_bidir_weights(model, args):
         else:
             new_dict['clip_' + key] = checkpoint_clip[key]
             
-    # load로 불러온 pre-trained weight를 new_dict에 담아주고
+
     checkpoint_model = new_dict
 
     # interpolate position embedding
@@ -425,14 +425,6 @@ def load_bidir_weights(model, args):
             checkpoint_model['pos_embed'] = new_pos_embed
 
     load_state_dict(model, checkpoint_model, prefix=args.model_prefix)
-    
-    # with torch.no_grad():#! module_layers에 들어가는 것만 한다.
-    #     for i in range(12):
-    #         model.blocks[i].time_attn.out_proj.weight.copy_(model.blocks[i].clip_attn.out_proj.weight)
-    #         model.blocks[i].time_attn.out_proj.bias.copy_(model.blocks[i].clip_attn.out_proj.bias)
-    #         model.blocks[i].time_attn.in_proj_weight.copy_(model.blocks[i].clip_attn.in_proj_weight)
-    #         model.blocks[i].time_attn.in_proj_bias.copy_(model.blocks[i].clip_attn.in_proj_bias)
-    #     print("copy attn layer")
         
 def load_clip_weights(model,load_path: str) -> Dict[str, torch.Tensor]:
     clip_model = torch.jit.load(load_path, map_location='cpu')
