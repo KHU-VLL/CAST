@@ -2,13 +2,15 @@
 # CAST: Cross-Attention in Space and Time for Video Action Recognition [[NeurIPS 2023](https://neurips.cc/virtual/2023/poster/70748)][[Project Page](https://jong980812.github.io/CAST.github.io)][[Arxiv](https://arxiv.org/abs/2311.18825)]
 
 ![CAST Framework](figs/CAST.jpg)
+<br>
 
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cast-cross-attention-in-space-and-time-for-1/action-recognition-on-epic-kitchens-100)](https://paperswithcode.com/sota/action-recognition-on-epic-kitchens-100?p=cast-cross-attention-in-space-and-time-for-1)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/khuvll/CAST)<br>
 ![Website Status](https://img.shields.io/website?url=https://jong980812.github.io/CAST.github.io/)<br>
 ![GitHub issues](https://img.shields.io/github/issues-raw/khuvll/CAST)
 ![GitHub closed issue](https://img.shields.io/github/issues-closed/khuvll/CAST)<br>
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)<br>
 
 
 # :wrench: Installation
